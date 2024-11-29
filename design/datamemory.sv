@@ -87,4 +87,17 @@ module datamemory #(
     end
   end
 
+assert property (@(posedge clk) disable iff (~rst_n)
+    !(MemRead && MemWrite)
+) else $error("Read and Write should not be active simultaneously");
+assert property (@(posedge clk) disable iff (~rst_n)
+    MemRead |-> (rd == Dataout)
+) else $error("Read data should match Dataout during read operation");
+assert property (@(posedge clk) disable iff (~rst_n)
+    MemWrite |-> (Wr != 4'b0000)
+) else $error("Write enable signal should not be zero during write operation");
+assert property (@(posedge clk) disable iff (~rst_n)
+    MemWrite |-> (Datain == wd)
+) else $error("Data written should match wd during write operation");
+
 endmodule

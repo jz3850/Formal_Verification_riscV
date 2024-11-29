@@ -28,4 +28,16 @@ module mux4
 
 assign y = (s==2'b11) ? d11 : (s==2'b10) ? d10 : (s==2'b01) ? d01 : d00;
 
+assert property (@(*)
+    (s == 2'b00) |-> (y == d00)
+) else $error("When s is 00, y should be equal to d00");
+assert property (@(*)
+    (s == 2'b01) |-> (y == d01)
+) else $error("When s is 01, y should be equal to d01");
+assert property (@(*)
+    (s == 2'b10) |-> (y == d10)
+) else $error("When s is 10, y should be equal to d10");
+assert property (@(*)
+    (s == 2'b11) |-> (y == d11)
+) else $error("When s is 11, y should be equal to d11");
 endmodule

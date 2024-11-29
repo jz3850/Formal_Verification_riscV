@@ -23,4 +23,14 @@ module instructionmemory #(
 
   assign rd = get_dataOut;
 
+assert property (@(posedge clk)
+    (rd == get_dataOut)
+) else $error("Read data should match the data output from memory");
+assert property (@(posedge clk)
+    (ra < (1 << INS_ADDRESS))
+) else $error("Read address should be within the valid range");
+assert property (@(posedge clk)
+    (meminst.Wr == 1'b0)
+) else $error("Write enable signal should be 0");
+
 endmodule

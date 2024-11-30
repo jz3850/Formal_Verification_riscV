@@ -1,0 +1,2 @@
+#!/bin/sh 
+jg Mux2_setup.tcl

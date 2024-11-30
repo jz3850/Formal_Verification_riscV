@@ -28,11 +28,11 @@ module mux2
 
 assign y = s ? d1 : d0;
 
-assert property (@(*)
+assert property (
     (s == 1'b0) |-> (y == d0)
 ) else $error("When s is 0, y should be equal to d0");
 
-assert property (@(*)
+assert property (
     (s == 1'b1) |-> (y == d1)
 ) else $error("When s is 1, y should be equal to d1");
 endmodule

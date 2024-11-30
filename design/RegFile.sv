@@ -47,11 +47,11 @@ assert property (@(negedge clk) disable iff (rst)
     (rg_wrt_en && !rst) |-> (register_file[rg_wrt_dest] == rg_wrt_data)
 ) else $error("Data written should match rg_wrt_data during write operation");
 
-assert property (@(*) disable iff (rst)
+assert property (@(negedge clk) disable iff (rst)
     (rg_rd_data1 == register_file[rg_rd_addr1])
 ) else $error("Read data1 should match the data in register_file at rg_rd_addr1");
 
-assert property (@(*) disable iff (rst)
+assert property (@(negedge clk) disable iff (rst)
     (rg_rd_data2 == register_file[rg_rd_addr2])
 ) else $error("Read data2 should match the data in register_file at rg_rd_addr2");
 endmodule

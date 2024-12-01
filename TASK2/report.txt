@@ -1,0 +1,107 @@
+
+==============================================================
+    Jasper Verification Results
+==============================================================
+    2024.06p002 64 bits for Linux64 3.10.0-1160.21.1.el7.x86_64
+    Host Name: cadpc02.ee.columbia.edu
+    User Name: hy2891
+    Printed on: Sunday, Dec 1, 2024 05:45:00 PM EST
+    Working Directory: /homes/user/stud/fall24/hy2891/ee6863/status_report
+
+
+==============================================================
+DESIGN INFO
+==============================================================
+    Top Level Module     : fifo_top
+    Clocks               : clk
+    Resets               : ~rst
+    Global Stopats       :     <none>
+    Global Assumptions   :     <none>
+
+==============================================================
+SUMMARY
+==============================================================
+    Total Tasks           : 1
+    Total Properties      : 3
+          assumptions     : 0                   
+           - approved     : 0                   
+           - temporary    : 0                   
+          assertions      : 3                   
+           - proven       : 3                   ( 100.0% )
+           - marked_proven: 0                   ( 0.0% )
+           - cex          : 0                   ( 0.0% )
+           - ar_cex       : 0                   ( 0.0% )
+           - undetermined : 0                   ( 0.0% )
+           - unprocessed  : 0                   ( 0.0% )
+           - error        : 0                   ( 0.0% )
+          covers          : 0                   
+           - unreachable  : 0                   
+           - covered      : 0                   
+           - ar_covered   : 0                   
+           - undetermined : 0                   
+           - unprocessed  : 0                   
+           - error        : 0                   
+
+==============================================================
+RESULTS
+==============================================================
+
+-------------------------------------------------------------------------------
+       Name                   |    Result    |  Engine  |  Bound  |  Time    
+-------------------------------------------------------------------------------
+
+---[ <embedded> ]--------------------------------------------------------------
+[1]   fifo_top._assert_1           proven          PRE    Infinite    0.000 s      
+[2]   fifo_top._assert_2           proven          PRE    Infinite    0.000 s      
+[3]   fifo_top._assert_3           proven          PRE    Infinite    0.000 s      
+
+==============================================================
+ASSUMPTIONS
+==============================================================
+
+-------------------------------------------------------------------------------
+       Name    |  Expression  |  Location     |  Status      |  Dependencies                  
+-------------------------------------------------------------------------------
+
+==============================================================
+DETAILED RESULTS
+==============================================================
+
+---[ <embedded> ]--------------------------------------------------------------
+[1]
+    Name       : fifo_top._assert_1
+    Expression : _assert_1
+    Type       : assert
+    Location   : fifo_top.sv, 41
+
+    Result     : proven
+    Bound      : Infinite
+    Time       : 0.000 s
+    Engine     : PRE
+
+
+[2]
+    Name       : fifo_top._assert_2
+    Expression : _assert_2
+    Type       : assert
+    Location   : fifo_top.sv, 42
+
+    Result     : proven
+    Bound      : Infinite
+    Time       : 0.000 s
+    Engine     : PRE
+
+
+[3]
+    Name       : fifo_top._assert_3
+    Expression : _assert_3
+    Type       : assert
+    Location   : fifo_top.sv, 43
+
+    Result     : proven
+    Bound      : Infinite
+    Time       : 0.000 s
+    Engine     : PRE
+
+
+-------------------------------------------------------------------------------
